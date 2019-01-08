@@ -17,6 +17,7 @@
         return;
       }
 
+
       var result = MenuSearchService.getMatchedMenuItems(ctrl.searchTerm)
 
       if (result.then) {
@@ -50,8 +51,7 @@
 
   function NothingFound(scope, element, attrs, controller) {
     scope.$watch('found', function (newValue, oldValue) {
-      console.log("old value: " + oldValue);
-      console.log("new value: " + newValue);
+
       // show when new value is [] and not on load
       if(newValue && !newValue.length) {
         element.find('h2').css('display', 'block');
